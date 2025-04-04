@@ -1,0 +1,128 @@
+/* Experience Section */
+.experience-section {
+  position: relative;
+  background-image: url("./back-image.png"); /* Adjust path */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Fix the background image */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff; /* Ensure text is white */
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+  font-family: "Inter", sans-serif; /* Default font for the section */
+}
+
+/* Background Shadow Overlay */
+.experience-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75); /* Dark overlay */
+  z-index: 1; /* Ensure it's above the background image */
+}
+
+.experience-content {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+  border-radius: 10px;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.experience-content h1 {
+  font-size: 48px;
+  margin-bottom: 40px;
+  font-family: "Inter", sans-serif; /* Apply Inter font to the heading */
+  font-weight: 700; /* Bold weight for the heading */
+  color: #fff; /* Ensure heading is white */
+}
+
+/* Timeline Layout */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 20px; /* Add padding to align content with the line */
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0; /* Align the line to the left */
+  width: 2px;
+  height: 100%;
+  background: #fff;
+  /* Remove transform: translateX(-50%) */
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -6px; /* Adjust to align with the left line */
+  width: 12px;
+  height: 12px;
+  background: #ffc6ca;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-date {
+  flex: 1;
+  margin-top: 23px;
+  text-align: right;
+  padding-right: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.timeline-content {
+  flex: 2;
+  text-align: left;
+  padding-left: 30px;
+}
+/* CTA Button */
+.cta-button {
+  font-family: "Open Sans", sans-serif; /* Apply Open Sans font to the button */
+  background-color: transparent; /* Make the button transparent */
+  color: #f9e6e4; /* Text color */
+  padding: 15px 30px;
+  border: 2px solid white; /* Add a 2px solid white border */
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600; /* Semi-bold weight for the button */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Add border-color to transition */
+  margin: 0 20px; /* Add 20px spacing on the left and right */
+}
+
+.cta-button:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Slight white background on hover */
+  color: #fff; /* Change text color on hover */
+  border-color: #fff; /* Ensure border color stays white on hover */
+}
+.cta-button:hover {
+  background-color: #ffc6ca;
+  color: #000000;
+}

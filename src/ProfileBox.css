@@ -1,0 +1,74 @@
+/* Profile Container */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 800px; /* Adjust as needed */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+/* Name and Tagline Box */
+.profile-box {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+.name-tagline h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.name-tagline p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Vertical Line */
+.vertical-line {
+  width: 2px;
+  height: 100%;
+  background-color: white;
+  margin: 0 20px; /* Space between the line and the boxes */
+}
+
+/* Buttons Box */
+.buttons-box {
+  flex: 1;
+  padding: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-button {
+  font-family: "Open Sans", sans-serif;
+  background-color: transparent;
+  color: white;
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.profile-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}

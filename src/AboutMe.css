@@ -1,0 +1,104 @@
+/* About Section */
+.about-section {
+  position: relative;
+  background-image: url("glaxy-background.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Fix the background image */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+  font-family: "Inter", sans-serif; /* Default font for the section */
+}
+
+/* Background Shadow Overlay */
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+  border-radius: 10px;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.about-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-family: "Inter", sans-serif; /* Apply Inter font to the heading */
+  font-weight: 700; /* Bold weight for the heading */
+}
+
+.profile-image-container {
+  margin: 20px 0;
+}
+
+.profile-image {
+  width: 150px; /* Adjust the size as needed */
+  height: 150px; /* Adjust the size as needed */
+  border-radius: 50%; /* Make the image circular */
+  border: 5px solid #fff; /* White border */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+    /* Outer glow */ 0 0 40px rgba(255, 255, 255, 0.3),
+    /* Middle glow */ 0 0 60px rgba(255, 255, 255, 0.1); /* Inner glow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.profile-image:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.7),
+    /* Enhanced outer glow */ 0 0 50px rgba(255, 255, 255, 0.5),
+    /* Enhanced middle glow */ 0 0 70px rgba(255, 255, 255, 0.3); /* Enhanced inner glow */
+}
+
+.about-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  font-family: "Open Sans", sans-serif; /* Apply Open Sans font to the paragraph */
+  font-weight: 400; /* Regular weight for the paragraph */
+  line-height: 1.6;
+}
+
+.cta-button {
+  font-family: "Open Sans", sans-serif; /* Apply Open Sans font to the button */
+  background-color: transparent; /* Make the button transparent */
+  color: #f9e6e4; /* Text color */
+  padding: 15px 30px;
+  border: 2px solid white; /* Add a 2px solid white border */
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600; /* Semi-bold weight for the button */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Add border-color to transition */
+  margin: 0 20px; /* Add 20px spacing on the left and right */
+}
+
+.cta-button:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Slight white background on hover */
+  color: #fff; /* Change text color on hover */
+  border-color: #fff; /* Ensure border color stays white on hover */
+}
+.cta-button:hover {
+  background-color: #ffc6ca;
+  color: #000000;
+}
