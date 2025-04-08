@@ -8,28 +8,44 @@ const Experience = () => {
   // Example experience data
   const experiences = [
     {
-      id: 1,
-      date: "Jan 2024 - Present",
-      role: "Software Engineer",
-      company: "Tech Corp",
+      id: 2,
+      date: "Sept 2024 - Present",
+      role: "Software Associate",
+      company: "Zipher",
       description:
-        "Developed scalable web applications using React and Node.js. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+        "I made the decision to deliver the Webpages to the US clents and helped them make the revenue of 1 Million Dollars also i added various features like RSS and Ihomefinder plugins to optimize the workflow and ultimately make revenue.",
     },
     {
-      id: 2,
-      date: "Jun 2021 - Dec 2022",
-      role: "Frontend Developer",
-      company: "Web Solutions",
+      id: 1,
+      date: " Dec 2024 -  March 2025",
+      role: "Software Engineer",
+      company: "Hull Advisory Ltd.",
       description:
-        "Designed and implemented user interfaces for client projects. Optimized web performance and improved user experience.",
+        "Developed a home page using React, CSS and HTML and made the deliveries on time while understanding the client's requirements.",
     },
     {
       id: 3,
-      date: "Sep 2020 - May 2021",
-      role: "Intern",
-      company: "Code Academy",
+      date: "June 2024 - Sept 2024",
+      role: "Junior Software Associate",
+      company: "Zipher",
       description:
-        "Learned and applied web development fundamentals. Assisted in building small-scale projects using HTML, CSS, and JavaScript.",
+        "Started my journey into corporate world and understood the various git and coding concepts to get hands on Experience.",
+    },
+    {
+      id: 4,
+      date: "June 2022 - Sept 2022",
+      role: "Back-End Developer",
+      company: "Bharat Electronics Ltd.",
+      description:
+        "My first internship i learned about the tools like PHPMyAdmin and Apache Servers along with the practical knowledge of using SQL to work on the servers.",
+    },
+    {
+      id: 4,
+      date: "April 2022 - present",
+      role: "Part-Time Computer Science Teacher ",
+      company: "ASK Tutorials",
+      description:
+        "During my Bachelors in Computer Sience and Engineering i Started teaching also this time i taught CBSE Syllabus to the Students.",
     },
   ];
 

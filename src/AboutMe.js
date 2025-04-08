@@ -26,7 +26,14 @@ const AboutMe = () => {
             book. I'm always eager to learn and grow, and I'm excited to bring
             my skills and enthusiasm to your team.
           </p>
-          <button className="cta-button">Download Resume</button>
+          <a
+            href="https://drive.google.com/file/d/1Mvh2_vXVN9NhWhVS1FcAzo_pwmTTE5f6/view?usp=sharing"
+            className="cta-button"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Download Resume
+          </a>
           <button
             className="cta-button"
             onClick={() => navigate("/")} // Navigate back to homepage

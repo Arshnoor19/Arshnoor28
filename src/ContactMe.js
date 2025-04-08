@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for routing
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa"; // Import social media icons
+
 import "./ContactMe.css";
 
 const Contact = () => {
@@ -49,28 +50,29 @@ const Contact = () => {
         {/* Social Media Icons */}
         <div className="social-icons">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/Arshnoor19"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaGithub className="icon" />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/arshnoor-singh-82559b229/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaLinkedin className="icon" />
           </a>
           <a
-            href="https://twitter.com/yourusername"
+            href="https://x.com/10_kairon"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaTwitter className="icon" />
           </a>
+
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:arshnoorsinghkairon@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
