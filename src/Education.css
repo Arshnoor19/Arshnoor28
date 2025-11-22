@@ -1,128 +1,254 @@
-/* Experience Section */
-.experience-section {
+/* Modern Education.css */
+.education-section {
   position: relative;
-  background-image: url("./back-image.png"); /* Adjust path */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* Fix the background image */
+  background: var(--dark-gradient);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff; /* Ensure text is white */
+  color: var(--text-primary);
   text-align: center;
-  padding: 20px;
+  padding: var(--spacing-xl);
   overflow: hidden;
-  font-family: "Inter", sans-serif; /* Default font for the section */
+  font-family: "Poppins", sans-serif;
 }
 
-/* Background Shadow Overlay */
-.experience-section::before {
+/* Animated Background */
+.education-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 30% 40%,
+      rgba(102, 126, 234, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 70% 60%,
+      rgba(118, 75, 162, 0.15) 0%,
+      transparent 50%
+    );
+  z-index: 0;
+}
+
+.education-content {
+  position: relative;
+  z-index: 2;
+  background: var(--bg-glass);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  max-width: 1000px;
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+}
+
+.education-content h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: var(--spacing-xl);
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+/* Education Cards Grid */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.education-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  transition: all var(--transition-smooth) var(--transition-easing);
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+.education-card::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.75); /* Dark overlay */
-  z-index: 1; /* Ensure it's above the background image */
+  height: 4px;
+  background: var(--primary-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-duration) var(--transition-easing);
 }
 
-.experience-content {
+.education-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.education-card:hover::before {
+  transform: scaleX(1);
+}
+
+.education-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.education-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-xs);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  color: var(--accent-primary);
+}
+
+.education-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-family: "Space Grotesk", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.education-card .date {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: var(--spacing-xs);
+  font-style: italic;
+}
+
+/* Timeline Style Alternative */
+.education-timeline {
   position: relative;
-  z-index: 2;
-  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
-  border-radius: 10px;
-  max-width: 800px;
-  padding: 20px;
-}
-
-.experience-content h1 {
-  font-size: 48px;
-  margin-bottom: 40px;
-  font-family: "Inter", sans-serif; /* Apply Inter font to the heading */
-  font-weight: 700; /* Bold weight for the heading */
-  color: #fff; /* Ensure heading is white */
-}
-
-/* Timeline Layout */
-.timeline {
-  position: relative;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding-left: 20px; /* Add padding to align content with the line */
+  padding-left: var(--spacing-lg);
 }
 
-.timeline::before {
+.education-timeline::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0; /* Align the line to the left */
-  width: 2px;
+  left: 0;
+  width: 3px;
   height: 100%;
-  background: #fff;
-  /* Remove transform: translateX(-50%) */
+  background: var(--primary-gradient);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-glow);
 }
 
-.timeline-item {
+.education-item {
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: var(--spacing-xl);
   position: relative;
+  transition: all var(--transition-duration) var(--transition-easing);
 }
 
-.timeline-item::before {
+.education-item:hover {
+  transform: translateX(10px);
+}
+
+.education-item::before {
   content: "";
   position: absolute;
-  top: 10px;
-  left: -6px; /* Adjust to align with the left line */
-  width: 12px;
-  height: 12px;
-  background: #ffc6ca;
-  border-radius: 50%;
+  top: 12px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  background: var(--secondary-gradient);
+  border-radius: var(--radius-full);
   z-index: 2;
+  box-shadow: 0 0 20px rgba(245, 87, 108, 0.6);
+  border: 3px solid var(--bg-primary);
+  transition: all var(--transition-duration) var(--transition-easing);
 }
 
-.timeline-date {
+.education-item:hover::before {
+  transform: scale(1.3);
+  box-shadow: 0 0 30px rgba(245, 87, 108, 0.8);
+}
+
+.education-item-content {
   flex: 1;
-  margin-top: 23px;
-  text-align: right;
-  padding-right: 30px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-}
-
-.timeline-content {
-  flex: 2;
   text-align: left;
-  padding-left: 30px;
+  padding-left: var(--spacing-lg);
+  background: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  transition: all var(--transition-duration) var(--transition-easing);
 }
-/* CTA Button */
+
+.education-item:hover .education-item-content {
+  background: var(--bg-glass-hover);
+  border-color: rgba(245, 87, 108, 0.3);
+  box-shadow: var(--shadow-md);
+}
+
 .cta-button {
-  font-family: "Open Sans", sans-serif; /* Apply Open Sans font to the button */
-  background-color: transparent; /* Make the button transparent */
-  color: #f9e6e4; /* Text color */
-  padding: 15px 30px;
-  border: 2px solid white; /* Add a 2px solid white border */
-  border-radius: 5px;
-  font-size: 18px;
-  font-weight: 600; /* Semi-bold weight for the button */
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Add border-color to transition */
-  margin: 0 20px; /* Add 20px spacing on the left and right */
+  margin-top: var(--spacing-lg);
+  background: rgba(255, 255, 255, 0.9);
+  color: #1a1a1a;
 }
 
 .cta-button:hover {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Slight white background on hover */
-  color: #fff; /* Change text color on hover */
-  border-color: #fff; /* Ensure border color stays white on hover */
+  background: rgba(255, 255, 255, 1);
+  color: #1a1a1a;
 }
-.cta-button:hover {
-  background-color: #ffc6ca;
-  color: #000000;
+
+@media (max-width: 768px) {
+  .education-section {
+    padding: var(--spacing-md);
+  }
+
+  .education-content {
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+  }
+
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .education-timeline {
+    padding-left: var(--spacing-md);
+  }
+
+  .education-timeline::before {
+    width: 2px;
+  }
+
+  .education-item {
+    flex-direction: column;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .education-item::before {
+    left: -7px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .education-item-content {
+    padding-left: var(--spacing-md);
+    padding-top: var(--spacing-md);
+  }
 }

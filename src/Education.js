@@ -1,54 +1,164 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import "./Education.css";
+import { GraduationCap, Award } from "lucide-react";
+import TransitionWrapper from "./component/TransitionWrapper";
+
+const backgroundGlyphs = [
+  { glyph: "[]", top: "8%", left: "10%", delay: "0.2s", duration: "20s" },
+  { glyph: "{}", top: "40%", left: "85%", delay: "1s", duration: "18s" },
+  { glyph: "()", top: "65%", left: "5%", delay: "0.5s", duration: "22s" },
+  { glyph: "[]", top: "25%", left: "60%", delay: "1.4s", duration: "16s" },
+  { glyph: "{}", top: "75%", left: "70%", delay: "0.8s", duration: "24s" },
+  { glyph: "()", top: "50%", left: "30%", delay: "1.1s", duration: "19s" },
+];
+
+const education = [
+  {
+    degree: "Bachelor of Technology in Computer Science and Engineering",
+    institution: "Guru Gobind Singh Inderprastha University, New Delhi",
+    period: "Sept 2020 - Sept 2024",
+    description:
+      "Here I learned about various web technologies and programming languages such as JavaScript, SQL, PHP, Python and C++. While learning all of this, I made various projects employing my hands-on knowledge and delivering outstanding results.",
+    highlights: [
+      "Learned web technologies: JavaScript, SQL, PHP, Python, C++",
+      "Built multiple projects applying practical knowledge",
+      "Gained expertise in software development and problem-solving",
+    ],
+  },
+  {
+    degree: "Higher Secondary Education in PCM",
+    institution: "Guru Harkrishan Public School, Vasant Vihar, New Delhi",
+    period: "April 2018 - April 2020",
+    description:
+      "Here I studied Physics, Chemistry, Maths and basics of Programming in C++. I scored 7.8/10 CGPA.",
+    highlights: [
+      "CGPA: 7.8/10",
+      "Studied Physics, Chemistry, and Mathematics",
+      "Learned fundamentals of C++ programming",
+    ],
+  },
+];
+
+const certifications = [
+  // Add your certifications here when available
+];
 
 const Education = () => {
-  const navigate = useNavigate();
-
-  // Example experience data
-  const experiences = [
-    {
-      id: 1,
-      date: "Sept 2020 - sept 2024",
-      role: "Bachelor of Technology in Computer Science and Engineering",
-      company: "Guru Gobind Singh Inderprastha University at New Delhi",
-      description:
-        "Here i learnt about the various web technologies and programming languages such as JavaScripts, SQL, PHP, Python and C++.While learning all of this i made various project employing my on hand knowledge and delivering the outstanding results.",
-    },
-    {
-      id: 2,
-      date: "April 2018 - April 2020",
-      role: "Higher Elementary Education in PCM",
-      company: "Guru Harkrishan Public School at Vasant Vihar, New Delhi",
-      description:
-        "Here I studied the Physics, Cheimistry, Maths and basics of Programming in C++ and i scored 7.8/10 CGPA",
-    },
-  ];
-
   return (
-    <section className="experience-section">
-      <div className="experience-content">
-        <h1>Education</h1>
-        <div className="timeline">
-          {experiences.map((exp) => (
-            <div key={exp.id} className="timeline-item">
-              <div className="timeline-date">{exp.date}</div>
-              <div className="timeline-content">
-                <h2>{exp.role}</h2>
-                <h3>{exp.company}</h3>
-                <p>{exp.description}</p>
-              </div>
-            </div>
+    <TransitionWrapper>
+      <section className="relative min-h-screen overflow-hidden bg-white text-brand-navy">
+        <div className="pointer-events-none absolute inset-0 z-0">
+          {backgroundGlyphs.map(({ glyph, top, left, delay, duration }) => (
+            <span
+              key={`${glyph}-${top}-${left}`}
+              aria-hidden="true"
+              style={{
+                top,
+                left,
+                animationDelay: delay,
+                animationDuration: duration,
+              }}
+              className="absolute text-8xl font-semibold text-slate-200/60 opacity-40 blur-[0.2px] motion-safe:animate-spin"
+            >
+              {glyph}
+            </span>
           ))}
         </div>
-        <button
-          className="cta-button"
-          onClick={() => navigate("/")} // Navigate back to homepage
-        >
-          Back to Home
-        </button>
-      </div>
-    </section>
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-12 sm:pb-16 lg:pb-20 min-h-screen">
+          <div className="max-w-4xl mx-auto w-full">
+            <div className="mb-12 animate-fade-in">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 font-display scroll-mt-16 sm:scroll-mt-24">
+                Education
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl text-slate-600">
+                Academic background and professional certifications.
+              </p>
+            </div>
+
+            <div className="space-y-12">
+              <section>
+                <div className="flex items-center gap-2 mb-6">
+                  <GraduationCap className="h-6 w-6 text-brand-teal" />
+                  <h2 className="text-2xl font-semibold text-slate-900 font-display">
+                    Degrees
+                  </h2>
+                </div>
+                <div className="space-y-6">
+                  {education.map((edu, index) => (
+                    <div
+                      key={index}
+                      className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 p-6 animate-slide-up"
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
+                        <div>
+                          <h3 className="text-xl font-semibold text-slate-900 font-display">
+                            {edu.degree}
+                          </h3>
+                          <p className="text-base text-slate-600 mt-1">
+                            {edu.institution}
+                          </p>
+                        </div>
+                        <span className="px-3 py-1 text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200 w-fit">
+                          {edu.period}
+                        </span>
+                      </div>
+                      <div className="space-y-4">
+                        <p className="text-slate-600 leading-relaxed">
+                          {edu.description}
+                        </p>
+                        <ul className="space-y-2">
+                          {edu.highlights.map((highlight, hIndex) => (
+                            <li
+                              key={hIndex}
+                              className="text-slate-600 flex gap-2"
+                            >
+                              <span className="text-brand-teal mt-1.5">•</span>
+                              <span>{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {certifications.length > 0 && (
+                <section>
+                  <div className="flex items-center gap-2 mb-6">
+                    <Award className="h-6 w-6 text-brand-teal" />
+                    <h2 className="text-2xl font-semibold text-slate-900 font-display">
+                      Certifications
+                    </h2>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {certifications.map((cert, index) => (
+                      <div
+                        key={index}
+                        className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 p-6 animate-slide-up"
+                        style={{
+                          animationDelay: `${
+                            (index + education.length) * 100
+                          }ms`,
+                        }}
+                      >
+                        <h3 className="text-lg font-semibold text-slate-900 font-display mb-1">
+                          {cert.name}
+                        </h3>
+                        <p className="text-slate-600 mb-3">{cert.issuer}</p>
+                        <span className="px-3 py-1 text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200">
+                          {cert.year}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+    </TransitionWrapper>
   );
 };
 

@@ -1,49 +1,159 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for routing (if needed)
-import "./AboutMe.css";
+import { Calendar, Clock } from "lucide-react";
 import TransitionWrapper from "./component/TransitionWrapper";
 
-const AboutMe = () => {
-  const navigate = useNavigate(); // Initialize useNavigate (if needed)
+const backgroundGlyphs = [
+  { glyph: "[]", top: "8%", left: "10%", delay: "0.2s", duration: "20s" },
+  { glyph: "{}", top: "40%", left: "85%", delay: "1s", duration: "18s" },
+  { glyph: "()", top: "65%", left: "5%", delay: "0.5s", duration: "22s" },
+  { glyph: "[]", top: "25%", left: "60%", delay: "1.4s", duration: "16s" },
+  { glyph: "{}", top: "75%", left: "70%", delay: "0.8s", duration: "24s" },
+  { glyph: "()", top: "50%", left: "30%", delay: "1.1s", duration: "19s" },
+];
+
+const blogPosts = [
+  {
+    title: "Building Scalable React Applications",
+    excerpt:
+      "Best practices and patterns for building React applications that can grow from MVP to enterprise scale.",
+    date: "March 15, 2024",
+    readTime: "8 min read",
+    tags: ["React", "Architecture", "Best Practices"],
+  },
+  {
+    title: "The Product Engineer's Mindset",
+    excerpt:
+      "What makes a product engineer different from a traditional software engineer? Exploring the intersection of product thinking and technical execution.",
+    date: "March 8, 2024",
+    readTime: "6 min read",
+    tags: ["Product", "Career", "Engineering"],
+  },
+  {
+    title: "Optimizing Database Queries at Scale",
+    excerpt:
+      "Lessons learned from optimizing database performance for applications serving millions of requests per day.",
+    date: "February 28, 2024",
+    readTime: "10 min read",
+    tags: ["Database", "Performance", "PostgreSQL"],
+  },
+  {
+    title: "From Design to Code: Bridging the Gap",
+    excerpt:
+      "How to work effectively with designers and translate beautiful designs into pixel-perfect implementations.",
+    date: "February 20, 2024",
+    readTime: "7 min read",
+    tags: ["Design", "Frontend", "Collaboration"],
+  },
+  {
+    title: "TypeScript Tips for Production Apps",
+    excerpt:
+      "Advanced TypeScript patterns and configurations that have improved code quality in production applications.",
+    date: "February 12, 2024",
+    readTime: "9 min read",
+    tags: ["TypeScript", "JavaScript", "Best Practices"],
+  },
+  {
+    title: "Building Real-Time Features with WebSockets",
+    excerpt:
+      "A practical guide to implementing real-time collaboration features using WebSockets and modern frameworks.",
+    date: "February 5, 2024",
+    readTime: "12 min read",
+    tags: ["WebSocket", "Real-time", "Backend"],
+  },
+];
+
+const Blog = () => {
+  const handlePostClick = (post) => {
+    // Handle post click - you can navigate to a detailed post page or open a modal
+    console.log("Post clicked:", post.title);
+    // You can add navigation logic here if you have individual post pages
+  };
+
+  const handleKeyDown = (event, post) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handlePostClick(post);
+    }
+  };
 
   return (
     <TransitionWrapper>
-      <section className="about-section">
-        <div className="about-content">
-          <h1>About Me</h1>
-          <div className="profile-image-container"></div>
-          <p>
-            Hi, I'm Arshnoor Singh, a passionate and competent coder with a
-            strong background in software development. I specialize in creating
-            efficient, scalable, and user-friendly applications. My journey in
-            the world of technology has equipped me with a diverse skill set,
-            allowing me to tackle complex problems and deliver innovative
-            solutions.
-          </p>
-          <p>
-            When I'm not coding, you can find me exploring the latest tech
-            trends, contributing to open-source projects, or enjoying a good
-            book. I'm always eager to learn and grow, and I'm excited to bring
-            my skills and enthusiasm to your team.
-          </p>
-          <a
-            href="https://drive.google.com/file/d/1Mvh2_vXVN9NhWhVS1FcAzo_pwmTTE5f6/view?usp=sharing"
-            className="cta-button"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Download Resume
-          </a>
-          <button
-            className="cta-button"
-            onClick={() => navigate("/")} // Navigate back to homepage
-          >
-            Back to Home
-          </button>
+      <section className="relative min-h-screen overflow-hidden bg-white text-brand-navy">
+        <div className="pointer-events-none absolute inset-0 z-0">
+          {backgroundGlyphs.map(({ glyph, top, left, delay, duration }) => (
+            <span
+              key={`${glyph}-${top}-${left}`}
+              aria-hidden="true"
+              style={{
+                top,
+                left,
+                animationDelay: delay,
+                animationDuration: duration,
+              }}
+              className="absolute text-8xl font-semibold text-slate-200/60 opacity-40 blur-[0.2px] motion-safe:animate-spin"
+            >
+              {glyph}
+            </span>
+          ))}
+        </div>
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-12 sm:pb-16 lg:pb-20 min-h-screen">
+          <div className="max-w-4xl mx-auto w-full">
+            <div className="mb-12 animate-fade-in">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 font-display scroll-mt-16 sm:scroll-mt-24">
+                Blog
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl text-slate-600">
+                Thoughts on product engineering, technical leadership, and
+                building great software.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {blogPosts.map((post, index) => (
+                <div
+                  key={index}
+                  onClick={() => handlePostClick(post)}
+                  onKeyDown={(e) => handleKeyDown(e, post)}
+                  className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer p-6 animate-slide-up"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`Read blog post: ${post.title}`}
+                >
+                  <h2 className="text-2xl font-semibold text-slate-900 hover:text-brand-teal transition-colors mb-2 font-display">
+                    {post.title}
+                  </h2>
+                  <p className="text-base text-slate-600 mb-4 leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex flex-wrap gap-4 text-sm text-slate-500 mb-4">
+                    <div className="flex items-center gap-1">
+                      <Calendar className="h-4 w-4" />
+                      <span>{post.date}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Clock className="h-4 w-4" />
+                      <span>{post.readTime}</span>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {post.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="px-3 py-1 text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </TransitionWrapper>
   );
 };
 
-export default AboutMe;
+export default Blog;

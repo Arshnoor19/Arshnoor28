@@ -7,12 +7,15 @@ import {
   useLocation,
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import Header from "./component/Header";
 import HeroSection from "./HeroSection";
 import AboutMe from "./AboutMe";
 import Projects from "./Projects";
 import Experience from "./Experience";
 import Education from "./Education";
 import Contact from "./ContactMe";
+import GamesList from "./GamesList";
+import GameRouter from "./GameRouter";
 import TransitionWrapper from "./component/TransitionWrapper";
 
 // This component needs to be INSIDE the Router
@@ -70,6 +73,22 @@ const AnimatedRoutes = () => {
             </TransitionWrapper>
           }
         />
+        <Route
+          path="/games"
+          element={
+            <TransitionWrapper>
+              <GamesList />
+            </TransitionWrapper>
+          }
+        />
+        <Route
+          path="/games/:gameId"
+          element={
+            <TransitionWrapper>
+              <GameRouter />
+            </TransitionWrapper>
+          }
+        />
       </Routes>
     </AnimatePresence>
   );
@@ -78,6 +97,7 @@ const AnimatedRoutes = () => {
 const App = () => {
   return (
     <Router>
+      <Header />
       <AnimatedRoutes />
     </Router>
   );
