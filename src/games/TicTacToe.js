@@ -145,7 +145,7 @@ const TicTacToe = () => {
 
   return (
     <TransitionWrapper>
-      <section className="relative min-h-screen overflow-hidden bg-sky-50 text-brand-navy">
+      <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50 text-brand-navy">
         <div className="pointer-events-none absolute inset-0 z-0">
           {backgroundGlyphs.map(({ glyph, top, left, delay, duration }) => (
             <span

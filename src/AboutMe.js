@@ -90,57 +90,57 @@ const Blog = () => {
                 animationDelay: delay,
                 animationDuration: duration,
               }}
-              className="absolute text-8xl font-semibold text-slate-200/60 opacity-40 blur-[0.2px] motion-safe:animate-spin"
+              className="absolute text-4xl sm:text-6xl md:text-8xl font-semibold text-slate-200/60 opacity-40 blur-[0.2px] motion-safe:animate-spin"
             >
               {glyph}
             </span>
           ))}
         </div>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-12 sm:pb-16 lg:pb-20 min-h-screen">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-8 sm:pb-12 md:pb-16 lg:pb-20 min-h-screen">
           <div className="max-w-4xl mx-auto w-full">
-            <div className="mb-12 animate-fade-in">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 font-display scroll-mt-16 sm:scroll-mt-24">
+            <div className="mb-8 sm:mb-12 animate-fade-in">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 font-display scroll-mt-16 sm:scroll-mt-24">
                 Blog
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-slate-600">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 leading-relaxed">
                 Thoughts on product engineering, technical leadership, and
                 building great software.
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {blogPosts.map((post, index) => (
                 <div
                   key={index}
                   onClick={() => handlePostClick(post)}
                   onKeyDown={(e) => handleKeyDown(e, post)}
-                  className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer p-6 animate-slide-up"
+                  className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer p-4 sm:p-6 animate-slide-up"
                   style={{ animationDelay: `${index * 100}ms` }}
                   tabIndex={0}
                   role="button"
                   aria-label={`Read blog post: ${post.title}`}
                 >
-                  <h2 className="text-2xl font-semibold text-slate-900 hover:text-brand-teal transition-colors mb-2 font-display">
+                  <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-900 hover:text-brand-teal transition-colors mb-2 font-display">
                     {post.title}
                   </h2>
-                  <p className="text-base text-slate-600 mb-4 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-600 mb-3 sm:mb-4 leading-relaxed">
                     {post.excerpt}
                   </p>
-                  <div className="flex flex-wrap gap-4 text-sm text-slate-500 mb-4">
+                  <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm text-slate-500 mb-3 sm:mb-4">
                     <div className="flex items-center gap-1">
-                      <Calendar className="h-4 w-4" />
+                      <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                       <span>{post.date}</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <Clock className="h-4 w-4" />
+                      <Clock className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                       <span>{post.readTime}</span>
                     </div>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {post.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="px-3 py-1 text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200"
+                        className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200"
                       >
                         {tag}
                       </span>

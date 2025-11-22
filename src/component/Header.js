@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
-      <div className="relative mx-auto w-full max-w-6xl px-4 py-1.5 sm:px-6 sm:py-3 md:px-10 md:py-4">
+      <div className="relative mx-auto w-full max-w-6xl px-4 py-1 sm:px-6 sm:py-3 md:px-10 md:py-2">
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden hidden md:block">
           {backgroundGlyphs.map(({ glyph, top, left, delay, duration }) => (
             <span
@@ -61,9 +61,9 @@ const Header = () => {
               onClick={handleNavigate("/")}
               className="text-left text-xs font-semibold tracking-tight text-brand-ink transition-transform duration-200 ease-out hover:scale-105 focus-visible:scale-105 focus-ring sm:text-base md:text-xl"
             >
-              Arshnoor Singh
+              Welcome
               <div className="text-[10px] font-medium text-brand-teal leading-tight sm:text-sm md:text-lg">
-                Product engineer
+                User!!
               </div>
             </button>
             <button

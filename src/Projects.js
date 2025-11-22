@@ -70,47 +70,47 @@ const Projects = () => {
                 animationDelay: delay,
                 animationDuration: duration,
               }}
-              className="absolute text-8xl font-semibold text-slate-200/60 opacity-40 blur-[0.2px] motion-safe:animate-spin"
+              className="absolute text-4xl sm:text-6xl md:text-8xl font-semibold text-slate-200/60 opacity-40 blur-[0.2px] motion-safe:animate-spin"
             >
               {glyph}
             </span>
           ))}
         </div>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-12 sm:pb-16 lg:pb-20 min-h-screen">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-8 sm:pb-12 md:pb-16 lg:pb-20 min-h-screen">
           <div className="max-w-6xl mx-auto w-full">
-            <div className="mb-12 animate-fade-in">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 font-display scroll-mt-16 sm:scroll-mt-24">
+            <div className="mb-8 sm:mb-12 animate-fade-in">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 font-display scroll-mt-16 sm:scroll-mt-24">
                 Projects
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-slate-600">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 leading-relaxed">
                 A selection of projects I've built, from MVPs to production
                 systems serving thousands of users.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-6 animate-slide-up"
+                  className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-4 sm:p-6 animate-slide-up"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="flex justify-between items-start mb-4">
-                    <h2 className="text-xl font-semibold text-slate-900 font-display">
+                  <div className="flex justify-between items-start mb-3 sm:mb-4 gap-2">
+                    <h2 className="text-lg sm:text-xl font-semibold text-slate-900 font-display flex-1">
                       {project.title}
                     </h2>
-                    <div className="flex gap-2">
+                    <div className="flex gap-1.5 sm:gap-2 flex-shrink-0">
                       {project.link !== "#" && (
                         <a
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-slate-500 hover:text-brand-teal transition-colors focus-ring rounded p-1"
+                          className="text-slate-500 hover:text-brand-teal transition-colors focus-ring rounded p-1.5 min-w-[44px] min-h-[44px] flex items-center justify-center"
                           aria-label="View project"
                           tabIndex={0}
                           onKeyDown={(e) => handleKeyDown(e, project.link)}
                         >
-                          <ExternalLink className="h-5 w-5" />
+                          <ExternalLink className="h-4 w-4 sm:h-5 sm:w-5" />
                         </a>
                       )}
                       {project.github !== "#" && (
@@ -118,24 +118,24 @@ const Projects = () => {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-slate-500 hover:text-brand-teal transition-colors focus-ring rounded p-1"
+                          className="text-slate-500 hover:text-brand-teal transition-colors focus-ring rounded p-1.5 min-w-[44px] min-h-[44px] flex items-center justify-center"
                           aria-label="View on GitHub"
                           tabIndex={0}
                           onKeyDown={(e) => handleKeyDown(e, project.github)}
                         >
-                          <Github className="h-5 w-5" />
+                          <Github className="h-4 w-4 sm:h-5 sm:w-5" />
                         </a>
                       )}
                     </div>
                   </div>
-                  <p className="text-base text-slate-600 mb-4 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-600 mb-3 sm:mb-4 leading-relaxed">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {project.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="px-3 py-1 text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200"
+                        className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200"
                       >
                         {tag}
                       </span>

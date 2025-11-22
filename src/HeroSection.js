@@ -30,33 +30,33 @@ const HeroSection = () => {
                 animationDelay: delay,
                 animationDuration: duration,
               }}
-              className="absolute text-8xl font-semibold text-slate-200/60 opacity-40 blur-[0.2px] motion-safe:animate-spin"
+              className="absolute text-4xl sm:text-6xl md:text-8xl font-semibold text-slate-200/60 opacity-40 blur-[0.2px] motion-safe:animate-spin"
             >
               {glyph}
             </span>
           ))}
         </div>
-        <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-6 sm:gap-8 px-4 sm:px-6 pb-8 sm:pb-10 pt-16 sm:pt-24 md:px-10 lg:pb-12">
+        <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-4 sm:gap-6 md:gap-8 px-4 sm:px-6 pb-6 sm:pb-8 md:pb-10 pt-16 sm:pt-24 md:px-10 lg:pb-12">
           <div className="flex flex-1 items-center">
-            <div className="flex w-full max-w-4xl flex-col gap-4 sm:gap-6 text-left">
-              <div className="space-y-2 sm:space-y-3">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-brand-ink">
+            <div className="flex w-full max-w-4xl flex-col gap-3 sm:gap-4 md:gap-6 text-left">
+              <div className="space-y-1.5 sm:space-y-2 md:space-y-3">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight text-brand-ink">
                   Arshnoor Singh
                 </h1>
-                <p className="text-xl sm:text-2xl md:text-4xl lg:text-6xl font-semibold leading-tight text-brand-teal">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-6xl font-semibold leading-tight text-brand-teal">
                   Building Digital Experiences
                 </p>
               </div>
-              <p className="max-w-2xl text-sm sm:text-base md:text-lg text-slate-500">
+              <p className="max-w-2xl text-xs sm:text-sm md:text-base lg:text-lg text-slate-500 leading-relaxed">
                 Crafting innovative solutions at the intersection of design and
                 engineering. Specialized in building scalable products that
                 users love.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mt-2">
                 <button
                   type="button"
                   onClick={handleNavigate("/projects")}
-                  className="inline-flex items-center gap-2 rounded-full bg-brand-ink px-6 py-3 text-sm font-semibold text-white shadow-card transition hover:-translate-y-0.5 hover:bg-slate-900 focus-ring"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-ink px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-card transition hover:-translate-y-0.5 hover:bg-slate-900 focus-ring min-h-[44px]"
                   aria-label="View projects"
                 >
                   View Projects
@@ -65,7 +65,7 @@ const HeroSection = () => {
                 <button
                   type="button"
                   onClick={handleNavigate("/contact")}
-                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-6 py-3 text-sm font-semibold text-brand-ink transition hover:border-brand-ink focus-ring"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-semibold text-brand-ink transition hover:border-brand-ink focus-ring min-h-[44px]"
                   aria-label="Get in touch"
                 >
                   Get in Touch

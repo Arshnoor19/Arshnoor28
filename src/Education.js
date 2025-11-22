@@ -57,62 +57,64 @@ const Education = () => {
                 animationDelay: delay,
                 animationDuration: duration,
               }}
-              className="absolute text-8xl font-semibold text-slate-200/60 opacity-40 blur-[0.2px] motion-safe:animate-spin"
+              className="absolute text-4xl sm:text-6xl md:text-8xl font-semibold text-slate-200/60 opacity-40 blur-[0.2px] motion-safe:animate-spin"
             >
               {glyph}
             </span>
           ))}
         </div>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-12 sm:pb-16 lg:pb-20 min-h-screen">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-8 sm:pb-12 md:pb-16 lg:pb-20 min-h-screen">
           <div className="max-w-4xl mx-auto w-full">
-            <div className="mb-12 animate-fade-in">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 font-display scroll-mt-16 sm:scroll-mt-24">
+            <div className="mb-8 sm:mb-12 animate-fade-in">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 font-display scroll-mt-16 sm:scroll-mt-24">
                 Education
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-slate-600">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 leading-relaxed">
                 Academic background and professional certifications.
               </p>
             </div>
 
-            <div className="space-y-12">
+            <div className="space-y-8 sm:space-y-10 md:space-y-12">
               <section>
-                <div className="flex items-center gap-2 mb-6">
-                  <GraduationCap className="h-6 w-6 text-brand-teal" />
-                  <h2 className="text-2xl font-semibold text-slate-900 font-display">
+                <div className="flex items-center gap-2 mb-4 sm:mb-6">
+                  <GraduationCap className="h-5 w-5 sm:h-6 sm:w-6 text-brand-teal" />
+                  <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 font-display">
                     Degrees
                   </h2>
                 </div>
-                <div className="space-y-6">
+                <div className="space-y-5 sm:space-y-6">
                   {education.map((edu, index) => (
                     <div
                       key={index}
-                      className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 p-6 animate-slide-up"
+                      className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 p-4 sm:p-6 animate-slide-up"
                       style={{ animationDelay: `${index * 100}ms` }}
                     >
-                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
-                        <div>
-                          <h3 className="text-xl font-semibold text-slate-900 font-display">
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3 sm:mb-4">
+                        <div className="flex-1">
+                          <h3 className="text-lg sm:text-xl font-semibold text-slate-900 font-display">
                             {edu.degree}
                           </h3>
-                          <p className="text-base text-slate-600 mt-1">
+                          <p className="text-sm sm:text-base text-slate-600 mt-1">
                             {edu.institution}
                           </p>
                         </div>
-                        <span className="px-3 py-1 text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200 w-fit">
+                        <span className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200 w-fit self-start sm:self-auto">
                           {edu.period}
                         </span>
                       </div>
-                      <div className="space-y-4">
-                        <p className="text-slate-600 leading-relaxed">
+                      <div className="space-y-3 sm:space-y-4">
+                        <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                           {edu.description}
                         </p>
-                        <ul className="space-y-2">
+                        <ul className="space-y-1.5 sm:space-y-2">
                           {edu.highlights.map((highlight, hIndex) => (
                             <li
                               key={hIndex}
-                              className="text-slate-600 flex gap-2"
+                              className="text-sm sm:text-base text-slate-600 flex gap-2"
                             >
-                              <span className="text-brand-teal mt-1.5">•</span>
+                              <span className="text-brand-teal mt-1.5 flex-shrink-0">
+                                •
+                              </span>
                               <span>{highlight}</span>
                             </li>
                           ))}
@@ -125,28 +127,30 @@ const Education = () => {
 
               {certifications.length > 0 && (
                 <section>
-                  <div className="flex items-center gap-2 mb-6">
-                    <Award className="h-6 w-6 text-brand-teal" />
-                    <h2 className="text-2xl font-semibold text-slate-900 font-display">
+                  <div className="flex items-center gap-2 mb-4 sm:mb-6">
+                    <Award className="h-5 w-5 sm:h-6 sm:w-6 text-brand-teal" />
+                    <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 font-display">
                       Certifications
                     </h2>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     {certifications.map((cert, index) => (
                       <div
                         key={index}
-                        className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 p-6 animate-slide-up"
+                        className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 p-4 sm:p-6 animate-slide-up"
                         style={{
                           animationDelay: `${
                             (index + education.length) * 100
                           }ms`,
                         }}
                       >
-                        <h3 className="text-lg font-semibold text-slate-900 font-display mb-1">
+                        <h3 className="text-base sm:text-lg font-semibold text-slate-900 font-display mb-1">
                           {cert.name}
                         </h3>
-                        <p className="text-slate-600 mb-3">{cert.issuer}</p>
-                        <span className="px-3 py-1 text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200">
+                        <p className="text-sm sm:text-base text-slate-600 mb-3">
+                          {cert.issuer}
+                        </p>
+                        <span className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200">
                           {cert.year}
                         </span>
                       </div>

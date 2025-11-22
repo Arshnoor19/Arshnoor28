@@ -93,71 +93,73 @@ const Experience = () => {
                 animationDelay: delay,
                 animationDuration: duration,
               }}
-              className="absolute text-8xl font-semibold text-slate-200/60 opacity-40 blur-[0.2px] motion-safe:animate-spin"
+              className="absolute text-4xl sm:text-6xl md:text-8xl font-semibold text-slate-200/60 opacity-40 blur-[0.2px] motion-safe:animate-spin"
             >
               {glyph}
             </span>
           ))}
         </div>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-12 sm:pb-16 lg:pb-20 min-h-screen">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-8 sm:pb-12 md:pb-16 lg:pb-20 min-h-screen">
           <div className="max-w-4xl mx-auto w-full">
-            <div className="mb-12 animate-fade-in">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4 font-display scroll-mt-16 sm:scroll-mt-24">
+            <div className="mb-8 sm:mb-12 animate-fade-in">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 font-display scroll-mt-16 sm:scroll-mt-24">
                 Experience
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-slate-600">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 leading-relaxed">
                 Building products and leading engineering initiatives across
                 startups and enterprises.
               </p>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-5 sm:space-y-6 md:space-y-8">
               {experiences.map((exp, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 p-6 animate-slide-up"
+                  className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 p-4 sm:p-6 animate-slide-up"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
-                    <div>
-                      <h2 className="text-2xl font-semibold text-slate-900 font-display">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3 sm:mb-4">
+                    <div className="flex-1">
+                      <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-900 font-display">
                         {exp.title}
                       </h2>
-                      <p className="text-lg text-slate-600 mt-1">
+                      <p className="text-base sm:text-lg text-slate-600 mt-1">
                         {exp.company}
                       </p>
                     </div>
-                    <span className="px-3 py-1 text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200 w-fit">
+                    <span className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200 w-fit self-start sm:self-auto">
                       {exp.period}
                     </span>
                   </div>
-                  <div className="space-y-4">
-                    <p className="text-slate-600 leading-relaxed">
+                  <div className="space-y-3 sm:space-y-4">
+                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                       {exp.description}
                     </p>
 
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-2">
+                      <h4 className="text-sm sm:text-base font-semibold text-slate-900 mb-2">
                         Key Achievements:
                       </h4>
-                      <ul className="space-y-2">
+                      <ul className="space-y-1.5 sm:space-y-2">
                         {exp.achievements.map((achievement, achIndex) => (
                           <li
                             key={achIndex}
-                            className="text-slate-600 flex gap-2"
+                            className="text-sm sm:text-base text-slate-600 flex gap-2"
                           >
-                            <span className="text-brand-teal mt-1.5">•</span>
+                            <span className="text-brand-teal mt-1.5 flex-shrink-0">
+                              •
+                            </span>
                             <span>{achievement}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    <div className="flex flex-wrap gap-2 pt-2">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-2">
                       {exp.tags.map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className="px-3 py-1 text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200"
+                          className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200"
                         >
                           {tag}
                         </span>
