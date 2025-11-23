@@ -96,10 +96,10 @@ const Blog = () => {
             </span>
           ))}
         </div>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-8 sm:pb-12 md:pb-16 lg:pb-20 min-h-screen">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-24 pb-8 sm:pb-12 md:pb-16 lg:pb-20 min-h-screen">
           <div className="max-w-4xl mx-auto w-full">
             <div className="mb-8 sm:mb-12 animate-fade-in">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 font-display scroll-mt-16 sm:scroll-mt-24">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 font-display scroll-mt-14 sm:scroll-mt-24">
                 Blog
               </h1>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 leading-relaxed">

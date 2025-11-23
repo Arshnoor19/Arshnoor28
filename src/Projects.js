@@ -13,6 +13,29 @@ const backgroundGlyphs = [
 
 const projects = [
   {
+    title: "OMIGO",
+    description:
+      "A smart mobility and ticketing app designed to simplify city travel. Built using React Native (Expo) with a Supabase backend, the app offers real-time station data, a guided booking flow, and seamless QR-based ticket retrieval. It integrates Razorpay for secure payments and uses Firebase Analytics to track user behavior and KPIs.",
+    tags: [
+      "React Native",
+      "Expo",
+      "Supabase",
+      "Razorpay",
+      "Firebase Analytics",
+      "JavaScript",
+    ],
+    link: "https://play.google.com/store/apps/details?id=com.getomigo.app&pcampaignid=web_share",
+    github: "#",
+  },
+  {
+    title: "Gym Buddy",
+    description:
+      "A fitness companion app designed to help users track workouts, measure progress, and follow structured routines with ease. Built using React Native, the app enables users to log exercises, follow muscle-group–based splits, monitor weight progression, and visualize long-term improvements through intuitive analytics. Alongside core tracking features, the platform also functions as a competitive fitness arena, where users participate in challenges and competitions. These events offer major prizes for winners, and users can subscribe to access premium competitions, enhanced analytics, priority leaderboard placement, and exclusive fitness programs—creating a hybrid ecosystem of personal progress tracking and competitive motivation.",
+    tags: ["React Native", "Supabase", "JavaScript", "Node.js"],
+    link: "#",
+    github: "https://github.com/Arshnoor19/pulse-prime-play.git",
+  },
+  {
     title: "Bike Buddy",
     description:
       "An App that would allow the users to see in real time the best mechanics in their areas.",
@@ -76,10 +99,10 @@ const Projects = () => {
             </span>
           ))}
         </div>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-8 sm:pb-12 md:pb-16 lg:pb-20 min-h-screen">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-24 pb-8 sm:pb-12 md:pb-16 lg:pb-20 min-h-screen">
           <div className="max-w-6xl mx-auto w-full">
             <div className="mb-8 sm:mb-12 animate-fade-in">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 font-display scroll-mt-16 sm:scroll-mt-24">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 font-display scroll-mt-14 sm:scroll-mt-24">
                 Projects
               </h1>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 leading-relaxed">

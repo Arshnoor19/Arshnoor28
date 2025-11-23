@@ -12,9 +12,32 @@ const backgroundGlyphs = [
 
 const experiences = [
   {
+    title: "Product Engineer",
+    company: "Kiwimesh Technologies Pvt. Ltd.",
+    period: "June 2025 - Present",
+    description:
+      "At Kiwimesh Technologies, I work across development and technical operations. I build and maintain app modules using React, React Native (Expo), JavaScript, Python, Flask, and Supabase, handling backend logic, API integrations, and deployment tasks. I coordinate with clients and field teams like WAPCOS to gather requirements, define milestones, and deliver clear technical reports. I also research new frameworks, optimize deployment workflows, and troubleshoot issues across mobile apps and internal dashboards. My role focuses on reliable execution, fast problem-solving, and maintaining steady project progress.",
+    achievements: [
+      "Building and maintaining application modules using React, React Native (Expo), JavaScript, Python, Flask, and Supabase",
+      "Handling backend logic, API integrations, and deployment configurations",
+      "Ensuring clean documentation and smooth project handovers",
+      "Working closely with clients and field teams, especially during projects with partners like WAPCOS",
+      "Collecting technical data, defining milestones, and preparing structured reports",
+      "Exploring new frameworks, researching deployment architectures, and troubleshooting issues across mobile apps, dashboards, and internal tools",
+    ],
+    tags: [
+      "React",
+      "React Native",
+      "JavaScript",
+      "Python",
+      "Flask",
+      "Supabase",
+    ],
+  },
+  {
     title: "Software Associate",
     company: "Zipher",
-    period: "Sept 2024 - Present",
+    period: "Sept 2024 - April 2025",
     description:
       "I made the decision to deliver the Webpages to the US clients and helped them make the revenue of 1 Million Dollars. I also added various features like RSS and Ihomefinder plugins to optimize the workflow and ultimately make revenue.",
     achievements: [
@@ -99,10 +122,10 @@ const Experience = () => {
             </span>
           ))}
         </div>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-8 sm:pb-12 md:pb-16 lg:pb-20 min-h-screen">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-24 pb-8 sm:pb-12 md:pb-16 lg:pb-20 min-h-screen">
           <div className="max-w-4xl mx-auto w-full">
             <div className="mb-8 sm:mb-12 animate-fade-in">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 font-display scroll-mt-16 sm:scroll-mt-24">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 font-display scroll-mt-14 sm:scroll-mt-24">
                 Experience
               </h1>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 leading-relaxed">

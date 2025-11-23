@@ -90,7 +90,7 @@ const MemoryGame = () => {
             </span>
           ))}
         </div>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-24 pb-12 sm:pb-16 lg:pb-20 min-h-screen">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-24 pb-12 sm:pb-16 lg:pb-20 min-h-screen">
           <div className="max-w-3xl mx-auto w-full">
             <button
               onClick={() => navigate("/games")}
@@ -100,7 +100,7 @@ const MemoryGame = () => {
               <span>Back to Games</span>
             </button>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-center text-slate-900 font-display scroll-mt-16 sm:scroll-mt-24">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-center text-slate-900 font-display scroll-mt-14 sm:scroll-mt-24">
               Memory Game
             </h1>
 

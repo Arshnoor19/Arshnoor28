@@ -36,7 +36,7 @@ const HeroSection = () => {
             </span>
           ))}
         </div>
-        <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-4 sm:gap-6 md:gap-8 px-4 sm:px-6 pb-6 sm:pb-8 md:pb-10 pt-16 sm:pt-24 md:px-10 lg:pb-12">
+        <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-4 sm:gap-6 md:gap-8 px-4 sm:px-6 pb-6 sm:pb-8 md:pb-10 pt-14 sm:pt-24 md:px-10 lg:pb-12">
           <div className="flex flex-1 items-center">
             <div className="flex w-full max-w-4xl flex-col gap-3 sm:gap-4 md:gap-6 text-left">
               <div className="space-y-1.5 sm:space-y-2 md:space-y-3">

@@ -34,8 +34,8 @@ const Header = () => {
   const handleToggleMenu = () => setIsMenuOpen((prev) => !prev);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
-      <div className="relative mx-auto w-full max-w-6xl px-4 py-1 sm:px-6 sm:py-3 md:px-10 md:py-2">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white shadow-sm">
+      <div className="relative mx-auto w-full max-w-6xl px-3 py-1.5 sm:px-6 sm:py-3 md:px-10 md:py-4">
         <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden hidden md:block">
           {backgroundGlyphs.map(({ glyph, top, left, delay, duration }) => (
             <span
@@ -53,17 +53,17 @@ const Header = () => {
             </span>
           ))}
         </div>
-        <div className="relative z-10 flex flex-col items-start gap-1.5 sm:gap-3 md:flex-row md:items-center md:justify-between md:gap-6">
+        <div className="relative z-10 flex flex-col items-start gap-1 sm:gap-3 md:flex-row md:items-center md:justify-between md:gap-6">
           <div className="flex w-full items-center justify-between gap-2">
             <button
               type="button"
               aria-label="Go to home"
               onClick={handleNavigate("/")}
-              className="text-left text-xs font-semibold tracking-tight text-brand-ink transition-transform duration-200 ease-out hover:scale-105 focus-visible:scale-105 focus-ring sm:text-base md:text-xl"
+              className="text-left text-sm font-semibold tracking-tight text-brand-ink transition-transform duration-200 ease-out hover:scale-105 focus-visible:scale-105 focus-ring sm:text-base md:text-xl leading-tight"
             >
-              Welcome
-              <div className="text-[10px] font-medium text-brand-teal leading-tight sm:text-sm md:text-lg">
-                User!!
+              <div className="leading-tight">Welcome</div>
+              <div className="text-xs font-medium text-brand-teal leading-tight sm:text-sm md:text-lg">
+                User!
               </div>
             </button>
             <button
@@ -80,7 +80,7 @@ const Header = () => {
                   handleToggleMenu();
                 }
               }}
-              className="flex h-7 w-7 items-center justify-center rounded-full border border-slate-200 bg-white text-brand-ink transition duration-200 hover:scale-105 hover:border-brand-teal hover:text-brand-teal focus-visible:scale-105 focus-ring md:hidden"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-slate-300 bg-white text-brand-ink transition duration-200 hover:scale-105 hover:border-brand-teal hover:text-brand-teal focus-visible:scale-105 focus-ring md:hidden flex-shrink-0"
             >
               <span className="sr-only">Toggle navigation</span>
               <span
@@ -118,9 +118,9 @@ const Header = () => {
           </nav>
           <nav
             id="mobile-menu"
-            className={`w-full rounded-xl border border-slate-200 bg-white p-2.5 shadow-lg transition-all duration-200 md:hidden mt-1 ${
+            className={`w-full rounded-xl border border-slate-200 bg-white p-2 shadow-lg transition-all duration-200 md:hidden mt-1 ${
               isMenuOpen
-                ? "grid gap-1.5 opacity-100 visible max-h-96"
+                ? "grid gap-1 opacity-100 visible max-h-96"
                 : "pointer-events-none scale-95 opacity-0 invisible max-h-0 overflow-hidden"
             }`}
             role="menu"
@@ -135,8 +135,10 @@ const Header = () => {
                   aria-label={`Navigate to ${label}`}
                   aria-current={isActive ? "page" : undefined}
                   onClick={handleNavigate(path)}
-                  className={`rounded-lg px-3 py-1.5 text-left text-sm font-medium transition duration-200 hover:bg-brand-teal/10 hover:text-brand-ink focus-ring ${
-                    isActive ? "text-brand-teal" : "text-brand-gray"
+                  className={`rounded-lg px-3 py-2 text-left text-sm font-medium transition duration-200 hover:bg-brand-teal/10 hover:text-brand-ink focus-ring min-h-[40px] ${
+                    isActive
+                      ? "text-brand-teal bg-brand-teal/5"
+                      : "text-brand-gray"
                   }`}
                   role="menuitem"
                 >
