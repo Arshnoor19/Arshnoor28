@@ -86,7 +86,7 @@ const Education = () => {
                   {education.map((edu, index) => (
                     <div
                       key={index}
-                      className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 p-4 sm:p-6 animate-slide-up"
+                      className="bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all duration-300 p-4 sm:p-6 animate-slide-up"
                       style={{ animationDelay: `${index * 100}ms` }}
                     >
                       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3 sm:mb-4">
