@@ -39,7 +39,7 @@ const Contact = () => {
 
   return (
     <TransitionWrapper>
-      <section className="relative min-h-screen overflow-hidden bg-white text-brand-navy">
+      <section className="relative min-h-screen overflow-hidden bg-white dark:bg-slate-900 text-brand-navy dark:text-slate-100 transition-colors duration-300">
         <div className="pointer-events-none absolute inset-0 z-0">
           {backgroundGlyphs.map(({ glyph, top, left, delay, duration }) => (
             <span
@@ -51,7 +51,7 @@ const Contact = () => {
                 animationDelay: delay,
                 animationDuration: duration,
               }}
-              className="absolute text-4xl sm:text-6xl md:text-8xl font-semibold text-slate-200/60 opacity-40 blur-[0.2px] motion-safe:animate-spin"
+              className="absolute text-4xl sm:text-6xl md:text-8xl font-semibold text-slate-200/60 dark:text-slate-700/40 opacity-40 blur-[0.2px] motion-safe:animate-spin"
             >
               {glyph}
             </span>
@@ -60,21 +60,21 @@ const Contact = () => {
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-24 pb-8 sm:pb-12 md:pb-16 lg:pb-20 min-h-screen">
           <div className="max-w-4xl mx-auto w-full">
             <div className="mb-8 sm:mb-12 animate-fade-in">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 font-display scroll-mt-14 sm:scroll-mt-24">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-3 sm:mb-4 font-display scroll-mt-14 sm:scroll-mt-24">
                 Get in Touch
               </h1>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
                 Let's discuss your next project or potential collaboration
                 opportunities.
               </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-              <div className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 p-4 sm:p-6 animate-slide-up">
-                <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-2 font-display">
+              <div className="bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all duration-300 p-4 sm:p-6 animate-slide-up">
+                <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-slate-100 mb-2 font-display">
                   Send a Message
                 </h2>
-                <p className="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6">
+                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-4 sm:mb-6">
                   Fill out the form and I'll get back to you within 24 hours.
                 </p>
                 <form
@@ -84,7 +84,7 @@ const Contact = () => {
                   <div className="space-y-1.5 sm:space-y-2">
                     <label
                       htmlFor="name"
-                      className="text-xs sm:text-sm font-medium text-slate-700"
+                      className="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300"
                     >
                       Name
                     </label>
@@ -94,13 +94,13 @@ const Contact = () => {
                       type="text"
                       placeholder="Your name"
                       required
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition-colors min-h-[44px]"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-base border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-teal dark:focus:ring-teal-400 focus:border-transparent transition-colors min-h-[44px]"
                     />
                   </div>
                   <div className="space-y-1.5 sm:space-y-2">
                     <label
                       htmlFor="email"
-                      className="text-xs sm:text-sm font-medium text-slate-700"
+                      className="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300"
                     >
                       Email
                     </label>
@@ -110,13 +110,13 @@ const Contact = () => {
                       type="email"
                       placeholder="your@email.com"
                       required
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition-colors min-h-[44px]"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-base border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-teal dark:focus:ring-teal-400 focus:border-transparent transition-colors min-h-[44px]"
                     />
                   </div>
                   <div className="space-y-1.5 sm:space-y-2">
                     <label
                       htmlFor="subject"
-                      className="text-xs sm:text-sm font-medium text-slate-700"
+                      className="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300"
                     >
                       Subject
                     </label>
@@ -126,13 +126,13 @@ const Contact = () => {
                       type="text"
                       placeholder="What's this about?"
                       required
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition-colors min-h-[44px]"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-base border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-teal dark:focus:ring-teal-400 focus:border-transparent transition-colors min-h-[44px]"
                     />
                   </div>
                   <div className="space-y-1.5 sm:space-y-2">
                     <label
                       htmlFor="message"
-                      className="text-xs sm:text-sm font-medium text-slate-700"
+                      className="text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300"
                     >
                       Message
                     </label>
@@ -142,12 +142,12 @@ const Contact = () => {
                       placeholder="Tell me about your project or inquiry..."
                       rows={5}
                       required
-                      className="w-full px-3 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-base border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition-colors resize-vertical"
+                      className="w-full px-3 sm:px-4 py-2.5 sm:py-2 text-sm sm:text-base border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-slate-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-teal dark:focus:ring-teal-400 focus:border-transparent transition-colors resize-vertical"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-brand-teal text-white py-3 px-6 rounded-lg text-sm sm:text-base font-semibold hover:bg-teal-600 transition-colors focus-ring min-h-[44px]"
+                    className="w-full bg-brand-teal dark:bg-teal-600 text-white py-3 px-6 rounded-lg text-sm sm:text-base font-semibold hover:bg-teal-600 dark:hover:bg-teal-700 transition-colors focus-ring min-h-[44px]"
                   >
                     Send Message
                   </button>
@@ -156,19 +156,19 @@ const Contact = () => {
 
               <div className="space-y-4 sm:space-y-6">
                 <div
-                  className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 p-4 sm:p-6 animate-slide-up"
+                  className="bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all duration-300 p-4 sm:p-6 animate-slide-up"
                   style={{ animationDelay: "100ms" }}
                 >
-                  <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-2 font-display">
+                  <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-slate-100 mb-2 font-display">
                     Contact Information
                   </h2>
-                  <p className="text-sm sm:text-base text-slate-600 mb-3 sm:mb-4">
+                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-3 sm:mb-4">
                     Prefer to reach out directly? Here are other ways to
                     connect.
                   </p>
                   <a
                     href="mailto:arshnoorsinghkairon@gmail.com"
-                    className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-slate-600 hover:text-brand-teal transition-colors focus-ring rounded p-2 min-h-[44px]"
+                    className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 hover:text-brand-teal dark:hover:text-teal-400 transition-colors focus-ring rounded p-2 min-h-[44px]"
                     aria-label="Send email"
                     tabIndex={0}
                     onKeyDown={(e) =>
@@ -183,13 +183,13 @@ const Contact = () => {
                 </div>
 
                 <div
-                  className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 p-4 sm:p-6 animate-slide-up"
+                  className="bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all duration-300 p-4 sm:p-6 animate-slide-up"
                   style={{ animationDelay: "200ms" }}
                 >
-                  <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-2 font-display">
+                  <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-slate-100 mb-2 font-display">
                     Social Links
                   </h2>
-                  <p className="text-sm sm:text-base text-slate-600 mb-3 sm:mb-4">
+                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-3 sm:mb-4">
                     Connect with me on social media platforms.
                   </p>
                   <div className="space-y-2 sm:space-y-3">
@@ -197,7 +197,7 @@ const Contact = () => {
                       href="https://www.linkedin.com/in/arshnoor-singh-82559b229/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-slate-600 hover:text-brand-teal transition-colors focus-ring rounded p-2 min-h-[44px]"
+                      className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 hover:text-brand-teal dark:hover:text-teal-400 transition-colors focus-ring rounded p-2 min-h-[44px]"
                       aria-label="Visit LinkedIn profile"
                       tabIndex={0}
                       onKeyDown={(e) =>
@@ -214,7 +214,7 @@ const Contact = () => {
                       href="https://github.com/Arshnoor19"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-slate-600 hover:text-brand-teal transition-colors focus-ring rounded p-2 min-h-[44px]"
+                      className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 hover:text-brand-teal dark:hover:text-teal-400 transition-colors focus-ring rounded p-2 min-h-[44px]"
                       aria-label="Visit GitHub profile"
                       tabIndex={0}
                       onKeyDown={(e) =>
@@ -228,7 +228,7 @@ const Contact = () => {
                       href="https://x.com/10_kairon"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-slate-600 hover:text-brand-teal transition-colors focus-ring rounded p-2 min-h-[44px]"
+                      className="flex items-center gap-2 sm:gap-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 hover:text-brand-teal dark:hover:text-teal-400 transition-colors focus-ring rounded p-2 min-h-[44px]"
                       aria-label="Visit Twitter profile"
                       tabIndex={0}
                       onKeyDown={(e) =>

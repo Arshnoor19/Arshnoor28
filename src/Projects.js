@@ -28,6 +28,21 @@ const projects = [
     github: "#",
   },
   {
+    title: "Agility Business Solution Website",
+    description:
+      "Managed and optimized the official website for Agility Business Solution by leveraging strong CLI-based backend configuration and advanced WordPress plugin orchestration. Responsibilities included configuring server-side environments, managing deployment workflows, optimizing site performance, implementing security enhancements, and streamlining content management processes. Utilized WordPress plugins to extend functionality, improve user experience, and maintain operational stability, ensuring a scalable, secure, and high-performing business website aligned with organizational goals and client requirements.",
+    tags: [
+      "WordPress",
+      "CLI Configuration",
+      "Backend Management",
+      "Performance Optimization",
+      "Security Enhancements",
+    ],
+    link: "https://www.agilitybsol.com/",
+    github: "#",
+  },
+
+  {
     title: "Gym Buddy",
     description:
       "A fitness companion app designed to help users track workouts, measure progress, and follow structured routines with ease. Built using React Native, the app enables users to log exercises, follow muscle-group–based splits, monitor weight progression, and visualize long-term improvements through intuitive analytics. Alongside core tracking features, the platform also functions as a competitive fitness arena, where users participate in challenges and competitions. These events offer major prizes for winners, and users can subscribe to access premium competitions, enhanced analytics, priority leaderboard placement, and exclusive fitness programs—creating a hybrid ecosystem of personal progress tracking and competitive motivation.",
@@ -81,7 +96,7 @@ const Projects = () => {
 
   return (
     <TransitionWrapper>
-      <section className="relative min-h-screen overflow-hidden bg-white text-brand-navy">
+      <section className="relative min-h-screen overflow-hidden bg-white dark:bg-slate-900 text-brand-navy dark:text-slate-100 transition-colors duration-300">
         <div className="pointer-events-none absolute inset-0 z-0">
           {backgroundGlyphs.map(({ glyph, top, left, delay, duration }) => (
             <span
@@ -93,7 +108,7 @@ const Projects = () => {
                 animationDelay: delay,
                 animationDuration: duration,
               }}
-              className="absolute text-4xl sm:text-6xl md:text-8xl font-semibold text-slate-200/60 opacity-40 blur-[0.2px] motion-safe:animate-spin"
+              className="absolute text-4xl sm:text-6xl md:text-8xl font-semibold text-slate-200/60 dark:text-slate-700/40 opacity-40 blur-[0.2px] motion-safe:animate-spin"
             >
               {glyph}
             </span>
@@ -102,10 +117,10 @@ const Projects = () => {
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-24 pb-8 sm:pb-12 md:pb-16 lg:pb-20 min-h-screen">
           <div className="max-w-6xl mx-auto w-full">
             <div className="mb-8 sm:mb-12 animate-fade-in">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 font-display scroll-mt-14 sm:scroll-mt-24">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-3 sm:mb-4 font-display scroll-mt-14 sm:scroll-mt-24">
                 Projects
               </h1>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
                 A selection of projects I've built, from MVPs to production
                 systems serving thousands of users.
               </p>
@@ -115,11 +130,11 @@ const Projects = () => {
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-4 sm:p-6 animate-slide-up"
+                  className="bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-4 sm:p-6 animate-slide-up"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="flex justify-between items-start mb-3 sm:mb-4 gap-2">
-                    <h2 className="text-lg sm:text-xl font-semibold text-slate-900 font-display flex-1">
+                    <h2 className="text-lg sm:text-xl font-semibold text-slate-900 dark:text-slate-100 font-display flex-1">
                       {project.title}
                     </h2>
                     <div className="flex gap-1.5 sm:gap-2 flex-shrink-0">
@@ -128,7 +143,7 @@ const Projects = () => {
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-slate-500 hover:text-brand-teal transition-colors focus-ring rounded p-1.5 min-w-[44px] min-h-[44px] flex items-center justify-center"
+                          className="text-slate-500 dark:text-slate-400 hover:text-brand-teal dark:hover:text-teal-400 transition-colors focus-ring rounded p-1.5 min-w-[44px] min-h-[44px] flex items-center justify-center"
                           aria-label="View project"
                           tabIndex={0}
                           onKeyDown={(e) => handleKeyDown(e, project.link)}
@@ -141,7 +156,7 @@ const Projects = () => {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-slate-500 hover:text-brand-teal transition-colors focus-ring rounded p-1.5 min-w-[44px] min-h-[44px] flex items-center justify-center"
+                          className="text-slate-500 dark:text-slate-400 hover:text-brand-teal dark:hover:text-teal-400 transition-colors focus-ring rounded p-1.5 min-w-[44px] min-h-[44px] flex items-center justify-center"
                           aria-label="View on GitHub"
                           tabIndex={0}
                           onKeyDown={(e) => handleKeyDown(e, project.github)}
@@ -151,14 +166,14 @@ const Projects = () => {
                       )}
                     </div>
                   </div>
-                  <p className="text-sm sm:text-base text-slate-600 mb-3 sm:mb-4 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-3 sm:mb-4 leading-relaxed">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {project.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200"
+                        className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-medium bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full border border-slate-200 dark:border-slate-600"
                       >
                         {tag}
                       </span>

@@ -45,7 +45,7 @@ const certifications = [
 const Education = () => {
   return (
     <TransitionWrapper>
-      <section className="relative min-h-screen overflow-hidden bg-white text-brand-navy">
+      <section className="relative min-h-screen overflow-hidden bg-white dark:bg-slate-900 text-brand-navy dark:text-slate-100 transition-colors duration-300">
         <div className="pointer-events-none absolute inset-0 z-0">
           {backgroundGlyphs.map(({ glyph, top, left, delay, duration }) => (
             <span
@@ -57,7 +57,7 @@ const Education = () => {
                 animationDelay: delay,
                 animationDuration: duration,
               }}
-              className="absolute text-4xl sm:text-6xl md:text-8xl font-semibold text-slate-200/60 opacity-40 blur-[0.2px] motion-safe:animate-spin"
+              className="absolute text-4xl sm:text-6xl md:text-8xl font-semibold text-slate-200/60 dark:text-slate-700/40 opacity-40 blur-[0.2px] motion-safe:animate-spin"
             >
               {glyph}
             </span>
@@ -66,10 +66,10 @@ const Education = () => {
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-24 pb-8 sm:pb-12 md:pb-16 lg:pb-20 min-h-screen">
           <div className="max-w-4xl mx-auto w-full">
             <div className="mb-8 sm:mb-12 animate-fade-in">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 font-display scroll-mt-14 sm:scroll-mt-24">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-3 sm:mb-4 font-display scroll-mt-14 sm:scroll-mt-24">
                 Education
               </h1>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
                 Academic background and professional certifications.
               </p>
             </div>
@@ -77,8 +77,8 @@ const Education = () => {
             <div className="space-y-8 sm:space-y-10 md:space-y-12">
               <section>
                 <div className="flex items-center gap-2 mb-4 sm:mb-6">
-                  <GraduationCap className="h-5 w-5 sm:h-6 sm:w-6 text-brand-teal" />
-                  <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 font-display">
+                  <GraduationCap className="h-5 w-5 sm:h-6 sm:w-6 text-brand-teal dark:text-teal-400" />
+                  <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-slate-100 font-display">
                     Degrees
                   </h2>
                 </div>
@@ -91,28 +91,28 @@ const Education = () => {
                     >
                       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3 sm:mb-4">
                         <div className="flex-1">
-                          <h3 className="text-lg sm:text-xl font-semibold text-slate-900 font-display">
+                          <h3 className="text-lg sm:text-xl font-semibold text-slate-900 dark:text-slate-100 font-display">
                             {edu.degree}
                           </h3>
-                          <p className="text-sm sm:text-base text-slate-600 mt-1">
+                          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-1">
                             {edu.institution}
                           </p>
                         </div>
-                        <span className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200 w-fit self-start sm:self-auto">
+                        <span className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-medium bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full border border-slate-200 dark:border-slate-600 w-fit self-start sm:self-auto">
                           {edu.period}
                         </span>
                       </div>
                       <div className="space-y-3 sm:space-y-4">
-                        <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                           {edu.description}
                         </p>
                         <ul className="space-y-1.5 sm:space-y-2">
                           {edu.highlights.map((highlight, hIndex) => (
                             <li
                               key={hIndex}
-                              className="text-sm sm:text-base text-slate-600 flex gap-2"
+                              className="text-sm sm:text-base text-slate-600 dark:text-slate-300 flex gap-2"
                             >
-                              <span className="text-brand-teal mt-1.5 flex-shrink-0">
+                              <span className="text-brand-teal dark:text-teal-400 mt-1.5 flex-shrink-0">
                                 •
                               </span>
                               <span>{highlight}</span>
@@ -128,8 +128,8 @@ const Education = () => {
               {certifications.length > 0 && (
                 <section>
                   <div className="flex items-center gap-2 mb-4 sm:mb-6">
-                    <Award className="h-5 w-5 sm:h-6 sm:w-6 text-brand-teal" />
-                    <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 font-display">
+                    <Award className="h-5 w-5 sm:h-6 sm:w-6 text-brand-teal dark:text-teal-400" />
+                    <h2 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-slate-100 font-display">
                       Certifications
                     </h2>
                   </div>
@@ -137,20 +137,20 @@ const Education = () => {
                     {certifications.map((cert, index) => (
                       <div
                         key={index}
-                        className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 p-4 sm:p-6 animate-slide-up"
+                        className="bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-lg transition-all duration-300 p-4 sm:p-6 animate-slide-up"
                         style={{
                           animationDelay: `${
                             (index + education.length) * 100
                           }ms`,
                         }}
                       >
-                        <h3 className="text-base sm:text-lg font-semibold text-slate-900 font-display mb-1">
+                        <h3 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-slate-100 font-display mb-1">
                           {cert.name}
                         </h3>
-                        <p className="text-sm sm:text-base text-slate-600 mb-3">
+                        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-3">
                           {cert.issuer}
                         </p>
-                        <span className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-medium bg-slate-100 text-slate-700 rounded-full border border-slate-200">
+                        <span className="px-2.5 sm:px-3 py-1 text-xs sm:text-sm font-medium bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full border border-slate-200 dark:border-slate-600">
                           {cert.year}
                         </span>
                       </div>

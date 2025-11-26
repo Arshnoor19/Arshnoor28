@@ -191,7 +191,7 @@ const SnakeGame = () => {
 
   return (
     <TransitionWrapper>
-      <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50 text-brand-navy">
+      <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-sky-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 text-brand-navy dark:text-slate-100 transition-colors duration-300">
         <div className="pointer-events-none absolute inset-0 z-0">
           {backgroundGlyphs.map(({ glyph, top, left, delay, duration }) => (
             <span
@@ -219,11 +219,11 @@ const SnakeGame = () => {
               <span>Back to Games</span>
             </button>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-center text-slate-900 font-display scroll-mt-14 sm:scroll-mt-24">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-center text-slate-900 dark:text-slate-100 font-display scroll-mt-14 sm:scroll-mt-24">
               Snake Game
             </h1>
 
-            <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-6 mb-6">
+            <div className="bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm p-6 mb-6">
               <div className="flex justify-between items-center mb-4">
                 <div className="text-lg font-semibold text-slate-900">
                   Score: {score}

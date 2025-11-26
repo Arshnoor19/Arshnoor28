@@ -71,7 +71,7 @@ const GamesList = () => {
 
   return (
     <TransitionWrapper>
-      <section className="relative min-h-screen overflow-hidden bg-white text-brand-navy">
+      <section className="relative min-h-screen overflow-hidden bg-white dark:bg-slate-900 text-brand-navy dark:text-slate-100 transition-colors duration-300">
         <div className="pointer-events-none absolute inset-0 z-0">
           {backgroundGlyphs.map(({ glyph, top, left, delay, duration }) => (
             <span
@@ -83,7 +83,7 @@ const GamesList = () => {
                 animationDelay: delay,
                 animationDuration: duration,
               }}
-              className="absolute text-4xl sm:text-6xl md:text-8xl font-semibold text-slate-200/60 opacity-40 blur-[0.2px] motion-safe:animate-spin"
+              className="absolute text-4xl sm:text-6xl md:text-8xl font-semibold text-slate-200/60 dark:text-slate-700/40 opacity-40 blur-[0.2px] motion-safe:animate-spin"
             >
               {glyph}
             </span>
@@ -92,10 +92,10 @@ const GamesList = () => {
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-24 pb-8 sm:pb-12 md:pb-16 lg:pb-20 min-h-screen">
           <div className="max-w-6xl mx-auto w-full">
             <div className="mb-8 sm:mb-12 animate-fade-in">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 sm:mb-4 font-display scroll-mt-14 sm:scroll-mt-24">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-3 sm:mb-4 font-display scroll-mt-14 sm:scroll-mt-24">
                 Mini Games
               </h1>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
                 A collection of fun mini games to play and enjoy!
               </p>
             </div>
@@ -108,7 +108,7 @@ const GamesList = () => {
                     key={game.id}
                     onClick={() => handleGameClick(game.id)}
                     onKeyDown={(e) => handleKeyDown(e, game.id)}
-                    className={`bg-white rounded-lg border-2 ${game.borderColor} shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer p-4 sm:p-6 animate-slide-up ${game.bgColor}`}
+                    className={`bg-white dark:bg-slate-800 rounded-lg border-2 ${game.borderColor} dark:border-slate-600 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer p-4 sm:p-6 animate-slide-up ${game.bgColor} dark:bg-slate-700/30`}
                     style={{ animationDelay: `${index * 100}ms` }}
                     tabIndex={0}
                     role="button"
@@ -122,15 +122,15 @@ const GamesList = () => {
                           className={`h-6 w-6 sm:h-8 sm:w-8 ${game.color}`}
                         />
                       </div>
-                      <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-900 font-display">
+                      <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-900 dark:text-slate-100 font-display">
                         {game.title}
                       </h2>
                     </div>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                    <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                       {game.description}
                     </p>
                     <div className="mt-3 sm:mt-4">
-                      <span className="text-xs sm:text-sm font-medium text-brand-teal">
+                      <span className="text-xs sm:text-sm font-medium text-brand-teal dark:text-teal-400">
                         Play Now →
                       </span>
                     </div>

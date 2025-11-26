@@ -7,6 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { ThemeProvider } from "./context/ThemeContext";
 import Header from "./component/Header";
 import HeroSection from "./HeroSection";
 import AboutMe from "./AboutMe";
@@ -96,10 +97,12 @@ const AnimatedRoutes = () => {
 
 const App = () => {
   return (
-    <Router>
-      <Header />
-      <AnimatedRoutes />
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Header />
+        <AnimatedRoutes />
+      </Router>
+    </ThemeProvider>
   );
 };
 
